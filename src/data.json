@@ -1,0 +1,9 @@
+[{
+  "name": "top",
+  "desc": "Back to top.",
+  "code": "document.scrollingElement.scrollTop = 0;"
+},{
+  "name": "down",
+  "desc": "Back to top.",
+  "code": "document.scrollingElement.scrollTop = document.scrollingElement.scrollTop"
+}]

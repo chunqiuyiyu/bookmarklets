@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Bookmartlet Template</title>
+  </head>
+
+  <body>
+    <p>
+      Use this page to simulate click event on the bookmarklet.
+    </p>
+    <button class="trigger">Click</button>
+
+    <script>
+      document.querySelector('.trigger').onclick = function() {
+        // Append test script
+        var testEl = document.querySelector('#test')
+        if (!testEl) {
+          var el = document.createElement('script');
+          el.id = 'test';
+          el.src = './test.js';
+          document.body.append(el);
+        } else {
+          testEl.parentNode.removeChild(testEl);
+        }
+      };
+    </script>
+  </body>
+</html>
