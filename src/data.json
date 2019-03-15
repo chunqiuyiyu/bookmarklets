@@ -1,9 +1,32 @@
 [{
-  "name": "top",
-  "desc": "Back to top.",
+  "name": "Top",
+  "desc": "Link to the top of the current page.",
+  "category": "Page",
   "code": "document.scrollingElement.scrollTop = 0;"
 },{
-  "name": "down",
-  "desc": "Back to top.",
-  "code": "document.scrollingElement.scrollTop = document.scrollingElement.scrollTop"
+  "name": "Down",
+  "desc": "Scroll the page to bottom.",
+  "category": "Page",
+  "code": "document.scrollingElement.scrollTop = document.scrollingElement.scrollHeight - innerHeight;"
+},{
+  "name": "Ghost Border",
+  "desc": "Highlight borders of all elements in document.",
+  "category": "DOM",
+  "code": "!document.querySelector('style#ghost')&&(document.body.innerHTML+='<style id=\"ghost\">html.ghost *{background:#000 !important;color:#0f0 !important;outline:solid #f00 1px !important;}</style>');document.documentElement.classList.toggle('ghost');"
+},{
+  "name": "Wikipedia Search",
+  "desc": "A Wikipedia search on any highlighted text in the web browser window.",
+  "category": "Link",
+  "code": "(function() { function se(d) { return d.selection ? d.selection.createRange().text : d.getSelection()} s = se(document); for (i=0; i<frames.length && !s; i++) {s = se(frames[i].document); } if (!s || s=='') { s = prompt('Enter%20search%20terms%20for%20Wikipedia',''); } open('https://en.wikipedia.org' + (s ? '/w/index.php?title=Special:Search&search=' + encodeURIComponent(s) : '')).focus();})();"
+}, {
+  "name": "Base64 Decode",
+  "desc": "Decode a string of selected data which has been encoded using base-64 encoding.",
+  "category": "Data",
+  "code": "(function() { var txt = document.getSelection().toString(); if (txt) { alert(atob(txt)); }})();"
+},{
+  "name": "Base64 Encode",
+  "desc": "Use base-64 encoding to encode a string of selected data.",
+  "category": "Data",
+  "code": "(function() { var txt = document.getSelection().toString(); if (txt) { alert(btoa(txt)); }})();"
 }]
+
